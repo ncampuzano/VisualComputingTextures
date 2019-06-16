@@ -2,7 +2,7 @@ PImage image;
 PShape window; 
 PShader convShader;
 int maskSelected = 1;
-boolean showMask = true;
+boolean showMask = false;
 
 void setup() {
   size(1200, 600, P3D);
