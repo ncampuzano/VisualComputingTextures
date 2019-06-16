@@ -11,7 +11,7 @@ varying vec4 vertTexCoord; // Passing data among shaders by function vertex()
 void main() {
   gl_Position = transform * position;
   vertColor = color;
-  // Bluis to image
+  // Bluish to image
   // vertColor = vec4(0, 0, 1, 1);
   vertTexCoord = texMatrix * vec4(texCoord, 1.0, 1.0);
 }
