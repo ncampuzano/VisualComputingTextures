@@ -47,9 +47,9 @@ void main() {
   
   /*
     Gaussian Blur 3x3
-      1    | -1 -1 -1 |
-     --- * | -1  8 -1 |
-      16   | -1 -1 -1 |
+      1    | 1 2 1 |
+     --- * | 2 4 2 |
+      16   | 1 2 1 |
   */
   if (showMask && maskSelected == 2) {
     sum = ((col0 + col2 + col6 + col8) * 0.0625) + ((col1 + col3 + col5 + col7) * 0.125) + (col4 *0.25);
