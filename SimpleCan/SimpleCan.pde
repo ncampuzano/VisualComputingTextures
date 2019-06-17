@@ -24,6 +24,7 @@ PShape createCan(float r, float h, int detail, PImage tex) {
   textureMode(NORMAL);
   PShape sh = createShape();
   sh.beginShape(QUAD_STRIP);
+  sh.fill(0, 0, 255, 255);
   sh.noStroke();
   sh.texture(tex);
   for (int i = 0; i <= detail; i++) {

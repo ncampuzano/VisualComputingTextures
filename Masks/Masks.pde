@@ -1,3 +1,7 @@
+import processing.video.*;
+
+Movie video;
+
 PImage image;
 PShape window; 
 PShader convShader;
@@ -7,17 +11,22 @@ boolean showMask = false;
 void setup() {
   size(1200, 600, P3D);
   image = loadImage("landscape.jpg");
-  window  = createWindow(1100, 500, image, 100);
+  video = new Movie(this, "Landscape.mp4");
+  video.play();
   convShader = loadShader("convfrag.glsl");
+  background(0);
 }
 
 void draw() {
-  background(0);
   shader(convShader);
   convShader.set("maskSelected", maskSelected);
   convShader.set("showMask", showMask);
   translate(50, height/2);
-  shape(window);
+  if (video.available()) {
+    video.read();
+    window  = createWindow(1100, 500, video, 100);
+    shape(window);
+  }
 }
 
 PShape createWindow(int imageW, int imageH, PImage texture, int detail) {
